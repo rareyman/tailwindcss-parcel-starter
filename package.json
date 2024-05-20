@@ -1,10 +1,10 @@
 {
   "name": "tailwindcss-parcel-starter",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "npx parcel src/index.html --port 8088",
+    "dev": "npx parcel src/**/*.html --port 8088",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -12,16 +12,16 @@
   "license": "ISC",
   "devDependencies": {
     "autoprefixer": "^10.4.13",
-    "eslint": "^8.31.0",
-    "eslint-config-prettier": "^8.6.0",
-    "eslint-plugin-html": "^7.1.0",
+    "eslint": "^9.3.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-html": "^8.1.1",
     "parcel": "^2.8.2",
     "postcss": "^8.4.21",
-    "prettier": "^2.8.8",
-    "prettier-plugin-tailwindcss": "^0.4.1",
-    "stylelint": "^14.16.1",
-    "stylelint-config-idiomatic-order": "^9.0.0",
-    "stylelint-order": "^6.0.1",
-    "tailwindcss": "^3.3.3"
+    "prettier": "^3.2.5",
+    "prettier-plugin-tailwindcss": "^0.5.14",
+    "stylelint": "^16.5.0",
+    "stylelint-config-idiomatic-order": "^10.0.0",
+    "stylelint-order": "^6.0.4",
+    "tailwindcss": "^3.4.3"
   }
 }
