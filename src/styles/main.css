@@ -2,38 +2,71 @@
 ============================================================================= */
 
 /**
- * This injects Tailwind's base styles and any base styles registered by
- * plugins.
+ * This injects Tailwind's base styles.
  */
-@tailwind base;
-/**
- * This injects Tailwind's component classes and any component classes
- * registered by plugins.
+
+@import 'tailwindcss';
+
+@theme {
+  --margin-micro: calc(1em / (1.618 * 1.618 * 1.618));
+  --margin-tiny: calc(1em / (1.618 * 1.618));
+  --margin-small: calc(1em / 1.618);
+  --margin-medium: 1em;
+  --margin-large: calc(1em * 1.618);
+  --margin-big: calc(1em * 1.618 * 1.618);
+  --margin-huge: calc(1em * 1.618 * 1.618 * 1.618);
+}
+
+/*
+screens: {
+				max_2xl: { max: '1536px' }, // laptop_lg, desktop
+				max_xl: { max: '1280px' }, // laptop
+				max_lg: { max: '1024px' }, // laptop_sm, tablet_lg
+				max_md: { max: '768px' }, // tablet
+
+				max_m_xl: { max: '430px' }, // iPhone Pro Max, Pixel C
+				max_m_lg: { max: '415px' }, // iPhone Pro, Pixel XL ***
+				max_m_md: { max: '375px' }, // iPhone, Samsung Galaxy ***
+				max_m_sm: { max: '320px' }, // iPhone (older)
+			},
  */
-@tailwind components;
-/**
- * This injects Tailwind's utility classes and any utility classes registered
- * by plugins.
- */
-@tailwind utilities;
+
+/*
+  The default border color has changed to `currentColor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentColor);
+  }
+}
 
 /*
 ============================================================================= */
 
 @layer base {
 
-	/* add base styles here */
-	body {
-		/* … */
-	}
+  /* add base styles here */
+  body {
+    /* … */
+  }
 }
 
 @layer components {
-	/* add component styles here */
+  /* add component styles here */
 }
 
 @layer utilities {
-	/* add utility styles here */
+  /* add utility styles here */
 }
 
 /**
@@ -41,10 +74,10 @@
 * your breakpoints by name instead of duplicating their values in your own CSS.
 */
 
-@media screen(sm) {
+@media (width >=theme(--breakpoint-sm)) {
 
-	/* small */
-	body {
-		/* … */
-	}
+  /* small */
+  body {
+    /* … */
+  }
 }
