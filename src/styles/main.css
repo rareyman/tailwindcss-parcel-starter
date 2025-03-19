@@ -15,6 +15,15 @@
   --margin-large: calc(1em * 1.618);
   --margin-big: calc(1em * 1.618 * 1.618);
   --margin-huge: calc(1em * 1.618 * 1.618 * 1.618);
+
+  --breakpoint-desktop-2xl: 1536px;
+  --breakpoint-desktop-xl: 1280px;
+  --breakpoint-desktop-lg: 1024px;
+  --breakpoint-tablet-lg: 768px;
+  --breakpoint-tablet-md: 640px;
+  --breakpoint-mobile-lg: 480px;
+  --breakpoint-mobile-md: 375px;
+  --breakpoint-mobile-sm: 320px;
 }
 
 /*
@@ -53,12 +62,9 @@ screens: {
 /*
 ============================================================================= */
 
-@layer base {
-
-  /* add base styles here */
-  body {
-    /* … */
-  }
+/* add base styles here */
+body {
+  /* … */
 }
 
 @layer components {
